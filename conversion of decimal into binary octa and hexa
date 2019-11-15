@@ -1,0 +1,60 @@
+from array import *
+num=int(input("Enter a  number:"))
+arr=[]
+def octal(num):
+    while(num>7):
+        bi=num%8
+        arr.append(bi)
+        num=num//8
+    arr.append(num)
+    octal=arr[::-1]
+    print("The octal value is:",*octal)
+def binary(num):
+    while(num>1):
+        bi=num%2
+        arr.append(bi)
+        num=num//2
+    arr.append(1)
+    binary=arr[::-1]
+    print("The binary value is:",*binary)
+def hexa(num):
+    while(num>9):
+        he=num%16
+        if(he<10):
+            arr.append(he)
+        elif(he>10 and he<16):
+            if(he==10):
+                arr.append("A")
+            if(he==11):
+                arr.append("B")
+            if(he==12):
+                arr.append("C")
+            if(he==13):
+                arr.append("D")
+            if(he==14):
+                arr.append("E")
+            if(he==15):
+                arr.append("F")
+        num=num//16
+        if(num<10 and num!=0):
+            arr.append(num)
+        
+    hexa=arr[::-1]
+    print("The Hexadecimal value is:",*hexa)
+    
+        
+print("""1.Binary
+2.Octal
+3.Hexa""")
+ch=int(input("Enter your choice:"))
+if(ch==1):
+    binary(num)
+elif(ch==2):
+    octal(num)
+elif(ch==3):
+    hexa(num)
+
+
+
+
+
