@@ -7,6 +7,7 @@ for x in range(0,26):
         k.append(l[x+y])
 mes=input("Enter your message:")
 mes=mes.upper()
+mes=mes.repalce(" ","")
 key=input("Enter your Key:")
 key=key.upper()
 pkey=key
